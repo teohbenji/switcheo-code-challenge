@@ -6,22 +6,29 @@ window.onload = function() {
         element.style.display = 'none';
     });
 
-    //Display crypto token when dropdown item selected
-    var e = document.getElementById("dropdownToken1");
-    e.onchange = function() {
-        console.log('images/' + e.options[e.selectedIndex].text + '.svg');
+    //Display corresponding crypto token when dropdown item selected
+    var dropdownToken1 = document.getElementById("dropdownToken1");
+    dropdownToken1.onchange = function() {
         let tokenImage1 = document.getElementById("imageToken1");
         tokenImage1.style.display = 'block';
-        tokenImage1.src = 'images/' + e.options[e.selectedIndex].text + '.svg';
+        tokenImage1.src = 'images/' + dropdownToken1.options[dropdownToken1.selectedIndex].text + '.svg';
     };
 
-    var f = document.getElementById("dropdownToken2");
-    f.onchange = function() {
-        console.log('images/' + e.options[e.selectedIndex].text + '.svg');
+    var dropdownToken2 = document.getElementById("dropdownToken2");
+    dropdownToken2.onchange = function() {
         let tokenImage2 = document.getElementById("imageToken2");
         tokenImage2.style.display = 'block';
-        tokenImage2.src = 'images/' + e.options[e.selectedIndex].text + '.svg';
+        tokenImage2.src = 'images/' + dropdownToken2.options[dropdownToken2.selectedIndex].text + '.svg';
     };
+
+    // Adding event listener to the button
+    var buttonConvert = document.getElementById('buttonConvert');
+    buttonConvert.addEventListener('click', function() {
+        var tokenId = dropdownToken1.options[dropdownToken1.selectedIndex].value;
+        var numOfTokens = document.getElementById("inputToken1").value;
+        console.log(tokenId + ",   " + numOfTokens);
+        // Add your button click logic here
+    });
 };
 
 function fetchUSDValueOfCoin(coinID) {
@@ -39,10 +46,10 @@ function fetchUSDValueOfCoin(coinID) {
         });
 }
 
-async function getUSDValueOfCoin(numOfToken, sellCoinID) {
+async function getUSDValueOfCoin(numOfTokens, sellCoinID) {
     try {
         const usdValue = await fetchUSDValueOfCoin(sellCoinID);
-        console.log(usdValue * numOfToken);
+        console.log(usdValue * numOfTokens);
     } catch (error) {
         console.error('Error:', error);
         throw error;
