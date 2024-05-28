@@ -52,7 +52,7 @@ function fetchUSDValueOfCoin(coinID) {
     return fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
-            console.log('Success fetching data');
+            console.log('Success fetching data' + coinID);
             return data.market_data.current_price.usd;
         })
         .catch(error => {
