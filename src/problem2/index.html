@@ -1,26 +1,34 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Fancy Form</title>
-
-  <!-- You may add more stuff here -->
-  <link href="style.css" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-  <!-- You may reorganise the whole HTML, as long as your form achieves the same effect. -->
-  <form onsubmit="return !1">
-    <h5>Swap</h5>
-    <label for="input-amount">Amount to send</label>
-    <input id="input-amount" />
-
-    <label for="output-amount">Amount to receive</label>
-    <input id="output-amount" />
-
-    <button>CONFIRM SWAP</button>
-  </form>
-  <script src="script.js"></script>
+  <div class="container">
+    <div class="section">
+      <h2>Sell</h2>
+      <input type="number" placeholder="Enter amount" class="input-box">
+      <select class="dropdown">
+        <option value="" disabled selected>Select Token</option>
+        <option value="token1">Token 1</option>
+        <option value="token2">Token 2</option>
+        <option value="token3">Token 3</option>
+      </select>
+    </div>
+    <button class="btn-convert">Convert Currency</button>
+    <div class="section">
+      <h2>Buy</h2>
+      <input type="number" placeholder="Enter amount" class="input-box">
+      <select class="dropdown">
+        <option value="" disabled selected>Select Token</option>
+        <option value="token1">Token 1</option>
+        <option value="token2">Token 2</option>
+        <option value="token3">Token 3</option>
+      </select>
+    </div>
+  </div>
 </body>
-
 </html>

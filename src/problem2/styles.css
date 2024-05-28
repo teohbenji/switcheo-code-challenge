@@ -1,0 +1,79 @@
+/* Reset and basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #6f54f2;
+}
+
+.container {
+  width: 320px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+  color: #6f54f2; /* Primary heading color */
+  text-align: center;
+}
+
+.input-box, .dropdown {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #5AB9EA;
+  border-radius: 5px;
+  background-color: #f7f9fc;
+  color: #495057;
+}
+
+.input-box:focus, .dropdown:focus {
+  outline: none;
+  border-color: #8860D0;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #84CEEB; /* Button background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #5AB9EA; /* Button hover color */
+}
+
+.btn-convert {
+  width: 100%;
+  padding: 10px;
+  background-color: #9c84f4; /* Convert button background color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.btn-convert:hover {
+  background-color: #6f54f2; /* Convert button hover color */
+}
