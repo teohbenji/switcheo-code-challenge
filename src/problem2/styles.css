@@ -1,4 +1,3 @@
-/* Reset and basic styles */
 * {
   margin: 0;
   padding: 0;
@@ -19,38 +18,61 @@ body {
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .section {
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-h2 {
-  margin-bottom: 10px;
-  color: #6f54f2; /* Primary heading color */
-  text-align: center;
-}
-
-.input-box, .dropdown {
-  width: 100%;
+.input-box, .dropdown, .section_usd {
+  width: 70%;
   padding: 10px;
   margin-bottom: 10px;
-  border: 1px solid #5AB9EA;
+  border: none;
   border-radius: 5px;
-  background-color: #f7f9fc;
-  color: #495057;
+  background-color: #ffffff;
+  color: #9c84f4;
 }
 
-.input-box:focus, .dropdown:focus {
+/*Remove spin buttons in input box*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input:focus {
   outline: none;
-  border-color: #8860D0;
+  border: none; 
+}
+
+input::placeholder {
+  color: #9c84f4;
+}
+
+.token-image {
+  width: 50px;
+  height: 50px;
+}
+
+.token-image-top {
+  margin-bottom: 20px;
+}
+
+.token-image-bottom {
+  margin-top: 10px;
 }
 
 .btn {
-  width: 100%;
+  width: 90%;
   padding: 10px;
-  background-color: #84CEEB; /* Button background color */
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -58,22 +80,25 @@ h2 {
   transition: background-color 0.3s;
 }
 
-.btn:hover {
-  background-color: #5AB9EA; /* Button hover color */
-}
-
-.btn-convert {
-  width: 100%;
+.btn-arrow {
+  width: 90%;
   padding: 10px;
-  background-color: #9c84f4; /* Convert button background color */
+  background-color: #9c84f4; 
   color: #fff;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: 20px;
   transition: background-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.btn-convert:hover {
-  background-color: #6f54f2; /* Convert button hover color */
+.btn-arrow:hover {
+  background-color: #6f54f2; 
+}
+
+.arrow-icon {
+  margin-right: 5px;
 }

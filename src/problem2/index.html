@@ -9,26 +9,31 @@
 <body>
   <div class="container">
     <div class="section">
-      <h2>Sell</h2>
-      <input type="number" placeholder="Enter amount" class="input-box">
+      <img src="images/BTC.svg" alt="Crypto Token" class="token-image token-image-top">
       <select class="dropdown">
         <option value="" disabled selected>Select Token</option>
         <option value="token1">Token 1</option>
         <option value="token2">Token 2</option>
         <option value="token3">Token 3</option>
       </select>
+      <input type="number" placeholder="Enter amount" class="input-box">
     </div>
-    <button class="btn-convert">Convert Currency</button>
+    <button class="btn-arrow">
+      <span class="arrow-icon">&#x25BC;</span> Convert
+    </button>
     <div class="section">
-      <h2>Buy</h2>
-      <input type="number" placeholder="Enter amount" class="input-box">
       <select class="dropdown">
-        <option value="" disabled selected>Select Token</option>
+        <option value="token-select" disabled selected>Select Token</option>
         <option value="token1">Token 1</option>
         <option value="token2">Token 2</option>
         <option value="token3">Token 3</option>
       </select>
+      <input type="number" placeholder="Enter amount" class="input-box">
+      <img src="images/ETH.svg" alt="Crypto Token" class="token-image token-image-bottom">
     </div>
+    <div class="section_usd">
+      USD value:
+    </div>  
   </div>
 </body>
 </html>
