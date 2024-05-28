@@ -60,29 +60,3 @@ function fetchUSDValueOfCoin(coinID) {
             throw error; 
         });
 }
-
-// async function getUSDValueOfCoin(numOfTokens, sellCoinID) {
-//     try {
-//         const usdValue = await fetchUSDValueOfCoin(sellCoinID);
-//         console.log(usdValue * numOfTokens);
-//     } catch (error) {
-//         console.error('Error:', error);
-//         throw error;
-//     }
-// }
-
-// async function getNumOfBuyCoinTokens(usdValueOfSellCoin, buyCoinID) {
-//     try {
-//         const usdValue = await fetchUSDValueOfCoin(buyCoinID);
-//         const numOfTokens = usdValueOfSellCoin / usdValue;
-//         console.log(numOfTokens);
-//         // return numOfTokens;
-//     } catch (error) {
-//         console.error('Error:', error);
-//         throw error;
-//     }
-// }
-
-//Test cases
-// getUSDValueOfCoin(1, "bitcoin");
-// getNumOfBuyCoinTokens(68501, "ethereum");
