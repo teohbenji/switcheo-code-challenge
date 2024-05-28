@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+h2 {
+  color: #9c84f4;
+  margin-bottom: 20px;
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -54,6 +59,11 @@ input:focus {
 
 input::placeholder {
   color: #9c84f4;
+}
+
+.dropdown:focus {
+  outline: none;
+  border: none; 
 }
 
 .token-image {
