@@ -35,7 +35,7 @@ body {
   align-items: center;
 }
 
-.input-box, .dropdown, .section_usd {
+.input-box, .dropdown{
   width: 70%;
   padding: 10px;
   margin-bottom: 10px;
@@ -111,4 +111,8 @@ input::placeholder {
 
 .arrow-icon {
   margin-right: 5px;
+}
+
+.section_usd {
+  color: #9c84f4;
 }

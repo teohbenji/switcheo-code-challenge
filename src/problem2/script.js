@@ -23,11 +23,26 @@ window.onload = function() {
 
     // Adding event listener to the button
     var buttonConvert = document.getElementById('buttonConvert');
-    buttonConvert.addEventListener('click', function() {
-        var tokenId = dropdownToken1.options[dropdownToken1.selectedIndex].value;
-        var numOfTokens = document.getElementById("inputToken1").value;
-        console.log(tokenId + ",   " + numOfTokens);
-        // Add your button click logic here
+    buttonConvert.addEventListener('click', async function() {
+        let sellTokenId = dropdownToken1.options[dropdownToken1.selectedIndex].value;
+        let buyTokenId = dropdownToken1.options[dropdownToken2.selectedIndex].value;
+        let numOfTokens = parseFloat(document.getElementById("inputToken1").value);
+        
+        try {
+            let sellTokenUSD = await fetchUSDValueOfCoin(sellTokenId);
+
+            //Display total USD value
+            let totalUSDValue = sellTokenUSD * numOfTokens; 
+            document.getElementById('divUSDValue').textContent = 'USD value: $' + totalUSDValue.toFixed(2);
+
+            //Display num of Buy Tokens
+            let buyTokenUSD = await fetchUSDValueOfCoin(buyTokenId);
+            let numOfBuyTokens = totalUSDValue / buyTokenUSD;
+            document.getElementById('inputToken2').value = numOfBuyTokens;
+        } catch (error) {
+            console.error('Error:', error);
+            throw error;
+        }
     });
 };
 
@@ -46,27 +61,27 @@ function fetchUSDValueOfCoin(coinID) {
         });
 }
 
-async function getUSDValueOfCoin(numOfTokens, sellCoinID) {
-    try {
-        const usdValue = await fetchUSDValueOfCoin(sellCoinID);
-        console.log(usdValue * numOfTokens);
-    } catch (error) {
-        console.error('Error:', error);
-        throw error;
-    }
-}
+// async function getUSDValueOfCoin(numOfTokens, sellCoinID) {
+//     try {
+//         const usdValue = await fetchUSDValueOfCoin(sellCoinID);
+//         console.log(usdValue * numOfTokens);
+//     } catch (error) {
+//         console.error('Error:', error);
+//         throw error;
+//     }
+// }
 
-async function getNumOfBuyCoinTokens(usdValueOfSellCoin, buyCoinID) {
-    try {
-        const usdValue = await fetchUSDValueOfCoin(buyCoinID);
-        const numOfTokens = usdValueOfSellCoin / usdValue;
-        console.log(numOfTokens);
-        // return numOfTokens;
-    } catch (error) {
-        console.error('Error:', error);
-        throw error;
-    }
-}
+// async function getNumOfBuyCoinTokens(usdValueOfSellCoin, buyCoinID) {
+//     try {
+//         const usdValue = await fetchUSDValueOfCoin(buyCoinID);
+//         const numOfTokens = usdValueOfSellCoin / usdValue;
+//         console.log(numOfTokens);
+//         // return numOfTokens;
+//     } catch (error) {
+//         console.error('Error:', error);
+//         throw error;
+//     }
+// }
 
 //Test cases
 // getUSDValueOfCoin(1, "bitcoin");
